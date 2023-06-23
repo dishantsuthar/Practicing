@@ -1,0 +1,37 @@
+import time
+import datetime
+
+def get_time():
+  """Gets the current time."""
+  current_time = time.localtime()
+  hour = current_time.tm_hour
+  minute = current_time.tm_min
+  second = current_time.tm_sec
+  return hour, minute, second
+
+def get_date():
+  """Gets the current date."""
+  current_date = datetime.date.today()
+  month = current_date.month
+  day = current_date.day
+  year = current_date.year
+  return month, day, year
+
+def get_day():
+  """Gets the current day of the week."""
+  current_day = datetime.date.today()
+  day_of_week = current_day.weekday()
+  days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  return days[day_of_week]
+
+def main():
+  """The main function."""
+  hour, minute, second = get_time()
+  month, day, year = get_date()
+  day_of_week = get_day()
+  print("The time is {}:{}:{}.".format(hour, minute, second))
+  print("The date is {}/{}/{}".format(month, day, year))
+  print("The day of the week is {}".format(day_of_week))
+
+if __name__ == "__main__":
+  main()
