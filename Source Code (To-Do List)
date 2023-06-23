@@ -1,0 +1,23 @@
+import time
+
+def start_stopwatch():
+  """Starts the stopwatch."""
+  start_time = time.time()
+  return start_time
+
+def stop_stopwatch(start_time):
+  """Stops the stopwatch and returns the elapsed time."""
+  end_time = time.time()
+  elapsed_time = end_time - start_time
+  return elapsed_time
+
+def main():
+  """The main function."""
+  start_time = start_stopwatch()
+  # Do something here that you want to time.
+  stop_time = stop_stopwatch(start_time)
+  elapsed_time = stop_time
+  print("Elapsed time: {} seconds".format(elapsed_time))
+
+if __name__ == "__main__":
+  main()
